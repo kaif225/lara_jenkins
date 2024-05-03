@@ -4,6 +4,7 @@ def call() {
         sh """
             cd /var/jenkins_home/workspace/porject3 &&
             ls
+            touch file1
            """
     }
 }
