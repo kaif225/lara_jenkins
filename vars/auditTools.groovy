@@ -5,7 +5,6 @@ def call(String repoUrl, String branch){
    sh "cd src && ls "
    sh """
        cd src &&
-       composer update && 
        composer config --no-plugins allow-plugins.phpstan/extension-installer true &&
        composer install --no-interaction --prefer-dist &&
         php artisan key:generate &&
