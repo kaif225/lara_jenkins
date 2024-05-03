@@ -3,7 +3,7 @@ def call() {
         // Clone the repository and build the Docker image
         sh """
             git clone https://github.com/kaif225/lara_jenkins.git &&
-            cd ${WORKSPACE}/lara_jenkins &&
+            cd ${WORKSPACE}/lara_jenkins/src &&
             docker build -t latavel_proj .
            """
     }
