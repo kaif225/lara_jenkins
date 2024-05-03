@@ -4,6 +4,7 @@ def call(String repoUrl, String branch){
    sh "git checkout ${branch}"
    sh "cd src && ls "
    sh """
+       cd src &&
        docker build -t abc .
       """ 
    return workingDir
