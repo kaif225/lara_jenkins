@@ -4,7 +4,11 @@ def call(String repoUrl, String branch){
    sh "git checkout ${branch}"
    sh "cd src && ls "
    sh """
-       ls
+       cd src &&
+       composer config --no-plugins allow-plugins.phpstan/extension-installer true &&
+       composer install --no-interaction --prefer-dist &&
+        php artisan key:generate &&
+        vendor/bin/phpunit
       """ 
    return workingDir
    
