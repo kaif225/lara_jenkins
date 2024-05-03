@@ -1,9 +1,8 @@
 def call() {
     node { 
-        sh """ 
-            def repoName = lara_jenkins
+        sh """
             git clone https://github.com/kaif225/lara_jenkins.git && \
-            cd ${WORKSPACE}/${repoName} && \ 
+            cd ${WORKSPACE}/lara_jenkins && \ 
            docker build -t latavel_proj .
            """
     }
