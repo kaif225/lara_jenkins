@@ -2,7 +2,7 @@ def call() {
     node { 
         // Clone the repository and build the Docker image
         sh """
-            cd ${WORKSPACE}/porject3 &&
+            cd /var/jenkins_home/workspace/porject3 &&
             ls
            """
     }
