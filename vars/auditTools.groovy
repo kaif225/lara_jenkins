@@ -4,11 +4,7 @@ def call(String repoUrl, String branch){
    sh "git checkout ${branch}"
    sh "cd src && ls "
    sh """
-       curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer &&
-        composer config --no-plugins allow-plugins.phpstan/extension-installer true &&
-        composer install --no-interaction --prefer-dist &&
-        php artisan key:generate
-        vendor/bin/phpunit
+       ls
       """ 
    return workingDir
    
