@@ -1,9 +1,6 @@
-def call() {
-    node { 
-        // Clone the repository and build the Docker image
-        sh """
-            ls
-            touch file1
-           """
-    }
+def call(String repoUrl, String branch){
+   def workingDir = "${env.WORKSPACE}"
+   sh "git clone ${repoUrl} ${workingDir}"
+   sh "git checkout ${branch}"
+   return workingDir
 }
