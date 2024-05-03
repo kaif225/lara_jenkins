@@ -8,8 +8,8 @@ def call(String repoUrl, String branch){
        composer update && 
        composer config --no-plugins allow-plugins.phpstan/extension-installer true &&
        composer install --no-interaction --prefer-dist &&
-        php artisan key:generate &&
-        vendor/bin/phpunit
+       cp .env.example .env
+       php artisan key:generate && vendor/bin/phpunit
       """ 
    return workingDir
    
